@@ -2,7 +2,7 @@ syntax on
 
 colorscheme default
 set fillchars+=vert:\ 
-highlight StatusLine ctermfg=2 ctermbg=2
+highlight StatusLine ctermfg=1 ctermbg=1
 highlight StatusLineNC ctermfg=black ctermbg=black
 highlight VertSplit ctermfg=black ctermbg=black
 
@@ -10,6 +10,10 @@ set number
 
 set ruler
 set cursorcolumn
+
+set foldmethod=indent
+set foldlevelstart=20
+highlight Folded ctermfg=172 ctermbg=black
 
 set tabstop=2
 set shiftwidth=2
@@ -34,4 +38,4 @@ inoremap <expr> ) strpart(getline('.'),col('.')-1,1)==")"?"\<Right>" : ")"
 inoremap [  []<Left>
 inoremap <expr> ] strpart(getline('.'),col('.')-1,1)=="]"?"\<Right>" : "]"
 inoremap <expr> ' strpart(getline('.'),col('.')-1,1)=="\'"?"\<Right>" : "\'\'\<Left>"
-inoremap <expr> " strpart(getline('.'),col('.')-1,1)=="\""?"\<Right>" : "\"\"\<Left>"
+inoremap <expr> " strpart(getline('.'),col('.')1,1)=="\""?"\<Right>" : "\"\"\<Left>"
