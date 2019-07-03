@@ -1,15 +1,19 @@
 syntax on
 
-colorscheme default
+colorscheme iceberg
 set fillchars+=vert:\ 
 highlight StatusLine ctermfg=1 ctermbg=1
 highlight StatusLineNC ctermfg=black ctermbg=black
 highlight VertSplit ctermfg=black ctermbg=black
+set backspace=2
 
+" search color
+hi Search cterm=NONE ctermfg=black ctermbg=cyan
 set number
 
 set ruler
 set cursorcolumn
+highlight CursorColumn ctermbg=black ctermfg=gray
 
 set foldmethod=indent
 set foldlevelstart=20
@@ -38,4 +42,10 @@ inoremap <expr> ) strpart(getline('.'),col('.')-1,1)==")"?"\<Right>" : ")"
 inoremap [  []<Left>
 inoremap <expr> ] strpart(getline('.'),col('.')-1,1)=="]"?"\<Right>" : "]"
 inoremap <expr> ' strpart(getline('.'),col('.')-1,1)=="\'"?"\<Right>" : "\'\'\<Left>"
-inoremap <expr> " strpart(getline('.'),col('.')1,1)=="\""?"\<Right>" : "\"\"\<Left>"
+inoremap <expr> " strpart(getline('.'),col('.')-1,1)=="\""?"\<Right>" : "\"\"\<Left>"
+inoremap <expr> <CR> strpart(getline('.'),col('.')-2,1)=="{"?"<CR><Esc>ko<Tab>": "<CR>"
+
+" powerline
+" source /Users/hammermash/anaconda3/lib/python3.6/site-packages/powerline/bindings/vim/plugin/powerline.vim
+" set laststatus=2
+" set t_Co=256
