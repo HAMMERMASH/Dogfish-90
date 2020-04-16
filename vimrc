@@ -49,3 +49,9 @@ inoremap <expr> <CR> strpart(getline('.'),col('.')-2,1)=="{"?"<CR><Esc>ko<Tab>":
 " source /Users/hammermash/anaconda3/lib/python3.6/site-packages/powerline/bindings/vim/plugin/powerline.vim
 " set laststatus=2
 " set t_Co=256
+
+" copy to clipboard
+nmap <F2> :set paste<CR>:r !pbpaste<CR>:set nopaste<CR>
+imap <F2> <Esc>:set paste<CR>:r !pbpaste<CR>:set nopaste<CR>
+nmap <F1> :.w !pbcopy<CR><CR>
+vmap <F1> :w !pbcopy<CR><CR>
